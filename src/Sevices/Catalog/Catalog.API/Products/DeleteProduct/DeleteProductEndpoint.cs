@@ -1,7 +1,4 @@
-﻿
-using Catalog.API.Products.CreateProduct;
-
-namespace Catalog.API.Products.DeleteProduct;
+﻿namespace Catalog.API.Products.DeleteProduct;
 
 public record DeleteProductRequest(Guid Id);
 public record DeleteProductResponse(bool IsSuccess);
@@ -19,7 +16,7 @@ public class DeleteProductEndpoint : ICarterModule
 
         })
         .WithName("DeleteProduct")
-        .Produces<CreateProductResponse>(StatusCodes.Status200OK)
+        .Produces<DeleteProductResponse>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .ProducesProblem(StatusCodes.Status404NotFound)
         .WithSummary("Delete Product")

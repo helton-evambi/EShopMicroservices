@@ -1,7 +1,4 @@
-﻿
-using Catalog.API.Products.CreateProduct;
-
-namespace Catalog.API.Products.GetProductByCategory;
+﻿namespace Catalog.API.Products.GetProductByCategory;
 
 public record GetProductByCategoryRequest();
 public record GetProductByCategoryResponse(IEnumerable<Product> Products);

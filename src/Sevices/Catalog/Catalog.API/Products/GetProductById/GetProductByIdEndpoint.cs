@@ -6,13 +6,13 @@ namespace Catalog.API.Products.GetProductById;
 public record GetProductByIdRequest();
 public record GetProductByIdResponse(Product Product);
 
-public class GetProductByIdEndpoint : CarterModule
+public class GetProductByIdEndpoint : ICarterModule
 {
-    public override void AddRoutes(IEndpointRouteBuilder app)
+    public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/products{id}", (Guid id, ISender sender) =>
+        app.MapGet("/products/{id}", async (Guid id, ISender sender) =>
         {
-            var result = sender.Send(new GetProductByIdQuery(id));
+            var result = await sender.Send(new GetProductByIdQuery(id));
 
             var response = result.Adapt<GetProductByIdResponse>();
 

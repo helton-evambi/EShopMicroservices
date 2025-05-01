@@ -5,3 +5,6 @@ global using MediatR;
 global using Mapster;
 global using FluentValidation;
 global using BuidingBlocks.Behaviors;
+global using BuidingBlocks.Exceptions;
+global using Basket.API.Exceptions;
+global using Marten;

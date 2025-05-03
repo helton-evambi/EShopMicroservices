@@ -8,7 +8,7 @@ public class DiscountContext : DbContext
     public DiscountContext(DbContextOptions<DiscountContext> options) : base(options)
     {
     }
-    DbSet<Coupon> Coupons { get; set; } = default!;
+    public DbSet<Coupon> Coupons { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

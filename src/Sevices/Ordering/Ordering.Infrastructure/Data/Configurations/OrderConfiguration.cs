@@ -25,7 +25,7 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
             o => o.OrderName, nameBuider =>
             {
                 nameBuider.Property(n => n.Value)
-                    .HasColumnName(nameof(OrderName.Value))
+                    .HasColumnName(nameof(Order.OrderName))
                     .IsRequired()
                     .HasMaxLength(100);
             });

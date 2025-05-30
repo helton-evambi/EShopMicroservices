@@ -13,7 +13,7 @@ using Ordering.Infrastructure.Data;
 namespace Ordering.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250519075616_InitialCreate")]
+    [Migration("20250530081934_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -137,7 +137,7 @@ namespace Ordering.Infrastructure.Data.Migrations
                                 .IsRequired()
                                 .HasMaxLength(100)
                                 .HasColumnType("nvarchar(100)")
-                                .HasColumnName("Value");
+                                .HasColumnName("OrderName");
                         });
 
                     b.ComplexProperty<Dictionary<string, object>>("Payment", "Ordering.Domain.Models.Order.Payment#Payment", b1 =>

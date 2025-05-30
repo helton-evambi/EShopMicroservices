@@ -134,7 +134,7 @@ namespace Ordering.Infrastructure.Data.Migrations
                                 .IsRequired()
                                 .HasMaxLength(100)
                                 .HasColumnType("nvarchar(100)")
-                                .HasColumnName("Value");
+                                .HasColumnName("OrderName");
                         });
 
                     b.ComplexProperty<Dictionary<string, object>>("Payment", "Ordering.Domain.Models.Order.Payment#Payment", b1 =>

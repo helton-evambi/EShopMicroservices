@@ -22,3 +22,4 @@ public record GetBasketResponse(ShoppingCartModel Cart);
 public record GetBasketRequest(string UserName);
 public record DeleteBasketResponse(bool IsSuccess);
 public record StoreBasketResponse(string UserName);
+public record StoreBasketRequest(ShoppingCartModel Cart);

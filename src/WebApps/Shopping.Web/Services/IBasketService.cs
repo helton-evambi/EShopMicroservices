@@ -13,4 +13,24 @@ public interface IBasketService
 
     [Post("/basket-service/basket/checkout")]
     Task<CheckoutBasketResponse> CheckoutBasket(CheckoutBasketRequest request);
+
+    public async Task<ShoppingCartModel> LoadUserBasket()
+    {
+        // Get Basket If Not Exists Create new Basket with Default loged in user name
+        var userName = "helton"; 
+        ShoppingCartModel basket;
+
+        try
+        {
+            var response = await GetBasket(userName);
+            basket = response.Cart;
+        }
+        catch (ApiException apiException) when (apiException.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            // If basket not found, create a new one
+            basket = new ShoppingCartModel { UserName = userName, Items = [] };
+        }
+
+        return basket;
+    }
 }
